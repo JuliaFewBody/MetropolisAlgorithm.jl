@@ -1,0 +1,7 @@
+name = "MetropolisAlgorithm"
+uuid = "e0c51df9-7b68-45ac-a268-26cdc14101c5"
+authors = ["Shuhei Ohno"]
+version = "0.0.1"
+
+[compat]
+julia = "1.11"
