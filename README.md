@@ -5,6 +5,10 @@
 [![Build Status](https://github.com/ohno/MetropolisAlgorithm.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/ohno/MetropolisAlgorithm.jl/actions/workflows/CI.yml?query=branch%3Amain)
 [![Code Style: Blue](https://img.shields.io/badge/code%20style-blue-4495d1.svg)](https://github.com/invenia/BlueStyle)
 
-## Citing
+## Documentation
+
+See https://ohno.github.io/MetropolisAlgorithm.jl.
+
+## Citation
 
 See [`CITATION.bib`](CITATION.bib) for the relevant reference(s).
