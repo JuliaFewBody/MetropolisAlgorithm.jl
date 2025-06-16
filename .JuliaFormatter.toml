@@ -1,2 +1,40 @@
-# See https://domluna.github.io/JuliaFormatter.jl/stable/ for a list of options
-style = "blue"
+# https://domluna.github.io/JuliaFormatter.jl/stable/#Formatting-Options
+# https://domluna.github.io/JuliaFormatter.jl/dev/yas_style/
+# https://domluna.github.io/JuliaFormatter.jl/dev/blue_style/
+# https://domluna.github.io/JuliaFormatter.jl/dev/sciml_style/
+indent                           = 2     # minority
+margin                           = 10000 # minority
+always_for_in                    = true
+whitespace_typedefs              = false
+whitespace_ops_in_indices        = true
+remove_extra_newlines            = true
+import_to_using                  = false # minority
+pipe_to_function_call            = true
+short_to_long_function_def       = false # minority
+force_long_function_def          = false
+long_to_short_function_def       = false
+always_use_return                = false
+whitespace_in_kwargs             = true  # minority
+annotate_untyped_fields_with_any = true
+format_docstrings                = false
+align_assignment                 = true
+align_struct_field               = true
+align_conditional                = true
+align_pair_arrow                 = true
+align_matrix                     = true
+conditional_to_if                = false
+normalize_line_endings           = "auto"
+trailing_comma                   = true
+trailing_zero                    = false
+join_lines_based_on_source       = true
+indent_submodule                 = false
+separate_kwargs_with_semicolon   = true
+surround_whereop_typeparameters  = true
+for_in_replacement               = "∈"
+variable_call_indent             = []
+yas_style_nesting                = false
+short_circuit_to_if              = false
+disallow_single_arg_nesting      = false
+overwrite                        = true
+verbose                          = false
+format_markdown                  = false
