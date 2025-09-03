@@ -4,25 +4,25 @@ p(r) = exp(- r&#39; * r)  # distribution function
 r₀ = [0.0, 0.0]       # initial position
 R = metropolis(p, r₀) # 1-walker x 10000-steps</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">10000-element Vector{Vector{Float64}}:
  [0.0, 0.0]
- [-0.16019102845573407, 0.30505044660351666]
- [-0.309797182809722, -0.06024652652290241]
- [-0.7883872390512094, 0.3192109693188687]
- [-0.6383550519119972, 0.6640963887876735]
- [-1.134085818191973, 0.5847919225407727]
- [-0.7764175639440242, 0.31816765830724014]
- [-0.7764175639440242, 0.31816765830724014]
- [-0.5828195260944246, -0.16804356067977533]
- [-0.5420365839177284, 0.2187708849283705]
+ [0.0, 0.0]
+ [-0.12939108242782127, -0.14063259002539985]
+ [0.16149211403190522, -0.5658678502318989]
+ [-0.17713085969278142, -0.21504220610377467]
+ [-0.46428759582659584, 0.20395605187675436]
+ [-0.40403584190837727, -0.16017207623202467]
+ [-0.40403584190837727, -0.16017207623202467]
+ [-0.7413318266872263, 0.13663437532772094]
+ [-0.7413318266872263, 0.13663437532772094]
  ⋮
- [0.6073944057906099, -1.5253695364046191]
- [1.0603474850658055, -1.160412360562392]
- [0.6081430687876129, -1.1187719666452902]
- [0.6081430687876129, -1.1187719666452902]
- [0.6081430687876129, -1.1187719666452902]
- [0.522476938583362, -0.9120814440423577]
- [0.29935511100544376, -1.091199637179203]
- [0.42469749120613887, -0.712492255134698]
- [0.04389432530115667, -0.38844975202147414]</code></pre><p>In the variational Monte Carlo method (VMC), sampling is performed simultaneously with multiple walkers (rather than just one walker). Here is an example of 10000-walkers x 5-steps, 2-dimensional Metropolis-walk using <code>metropolis!()</code>. This function overwrites its second argument without memory allocation, where the first argument is the (normalized or unnormalized) distribution function, and the second argument is the vector of the initial value vectors. Use the For statement to repeat as many times as you like. Remove the first several steps by yourself to ensure equilibrium.</p><pre><code class="language-julia hljs">using MetropolisAlgorithm
+ [-1.087558654888852, -1.1900400604578192]
+ [-1.087558654888852, -1.1900400604578192]
+ [-0.6694444671578557, -0.6918491181791866]
+ [-0.6694444671578557, -0.6918491181791866]
+ [-0.6114449661600153, -0.3163794377974656]
+ [-0.4346784769850769, -0.7722211689045986]
+ [-0.4346784769850769, -0.7722211689045986]
+ [-0.40345101267358474, -0.6751887811837138]
+ [-0.6052050732649935, -0.5157123497723171]</code></pre><p>In the variational Monte Carlo method (VMC), sampling is performed simultaneously with multiple walkers (rather than just one walker). Here is an example of 10000-walkers x 5-steps, 2-dimensional Metropolis-walk using <code>metropolis!()</code>. This function overwrites its second argument without memory allocation, where the first argument is the (normalized or unnormalized) distribution function, and the second argument is the vector of the initial value vectors. Use the For statement to repeat as many times as you like. Remove the first several steps by yourself to ensure equilibrium.</p><pre><code class="language-julia hljs">using MetropolisAlgorithm
 p(x) = exp(- x&#39; * x)              # distribution function
 R = [[0.0, 0.0] for i in 1:10000] # initial position(s)
 metropolis!(p, R)                 # the 1st step of 10000-walkers
@@ -62,4 +62,4 @@ metropolis!(p, R)                 # the 5th step of 10000-walkers</code></pre><p
   url       = {http://dx.doi.org/10.1017/CBO9781139171397},
   DOI       = {10.1017/cbo9781139171397},
   ISBN      = {9781107677135}
-}</code></pre></article><nav class="docs-footer"><a class="docs-footer-nextpage" href="examples/">Examples »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.12.0 on <span class="colophon-date" title="Monday 16 June 2025 22:14">Monday 16 June 2025</span>. Using Julia version 1.11.5.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+}</code></pre></article><nav class="docs-footer"><a class="docs-footer-nextpage" href="examples/">Examples »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.14.1 on <span class="colophon-date" title="Wednesday 3 September 2025 12:58">Wednesday 3 September 2025</span>. Using Julia version 1.11.6.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
