@@ -8,7 +8,7 @@ makedocs(;
   authors = "Shuhei Ohno",
   sitename = "MetropolisAlgorithm.jl",
   format = Documenter.HTML(;
-    canonical = "https://ohno.github.io/MetropolisAlgorithm.jl",
+    canonical = "https://JuliaFewBody.github.io/MetropolisAlgorithm.jl",
     edit_link = "main",
     assets = String[
       "./assets/logo.ico",
@@ -22,6 +22,6 @@ makedocs(;
 )
 
 deploydocs(;
-  repo = "github.com/ohno/MetropolisAlgorithm.jl",
+  repo = "github.com/JuliaFewBody/MetropolisAlgorithm.jl",
   devbranch = "main",
 )
