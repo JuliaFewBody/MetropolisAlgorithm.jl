@@ -34,7 +34,7 @@ X = [r[1] for r in R]
 hist(X)
 ```
 
-This is the trajectory of a walker at each step. The histogram above shows the number of these dots in the interval of bins.
+This is the trajectory of a walker at each step. The histogram above shows the number of these points in each bin.
 
 ```@example eg1
 # plotting trajectory
