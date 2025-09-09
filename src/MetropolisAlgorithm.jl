@@ -106,7 +106,7 @@ end
 @doc raw"""
   metropolis!(f::Function, R::Vector{<:Vector}; type=typeof(first(first(R))), d::Real=one(type))
 
-This function performs one step for many walkers and overwrites the second argument `R`.
+This function performs **one step for many walkers** and overwrites the second argument `R`.
 Each element of `R` is a point (not a trajectory).
 
 # Arguments
@@ -119,7 +119,7 @@ Each element of `R` is a point (not a trajectory).
 @doc raw"""
   metropolis!(f::Function, R::Vector{<:Vector}, r_ini::Vector{<:Real}; type=typeof(first(r_ini)), d::Real=one(type))
 
-This function performs many steps for one walker and overwrites the second argument `R`.
+This function performs **many steps for one walker** and overwrites the second argument `R`.
 
 # Arguments
 - `f::Function`: Distribution function. It does not need to be normalized.
@@ -133,7 +133,7 @@ This function performs many steps for one walker and overwrites the second argum
 @doc raw"""
   metropolis(f::Function, r_ini::Vector{<:Real}; n_steps::Int=10^4, type=typeof(first(r_ini)), d::Real=one(type))
 
-This function performs many steps for one walker using `metropolis!(f, R, r_ini)` and returns the trajectory `R` as a vector of vectors (points) with memory allocation.
+This function performs **many steps for one walker** using `metropolis!(f, R, r_ini)` and returns the trajectory `R` as a vector of vectors (points) with memory allocation.
 """ metropolis(f::Function, r_ini::Vector{<:Real})
 
 @doc raw"""
