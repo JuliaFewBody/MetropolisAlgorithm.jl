@@ -35,7 +35,7 @@ r₀ = [0.0, 0.0]       # initial position
 R = metropolis(p, r₀) # 1-walker x 10000-steps
 ```
 
-In the variational Monte Carlo method (VMC), sampling is performed simultaneously with multiple walkers (rather than just one walker). Here is an example of 10000-walkers x 5-steps, 2-dimensional Metropolis-walk using `metropolis!()`. This function overwrites its second argument without memory allocation, where the first argument is the (normalized or unnormalized) distribution function, and the second argument is the vector of the initial value vectors. Use the For statement to repeat as many times as you like. Remove the first several steps by yourself to ensure equilibrium.
+In the variational Monte Carlo method (VMC), sampling is performed simultaneously with multiple walkers (rather than just one walker). Here is an example of 10000-walkers x 5-steps, 2-dimensional Metropolis-walk using `metropolis!()`. This function overwrites its second argument without memory allocation, where the first argument is the (normalized or unnormalized) distribution function, and the second argument is the vector of the initial value vectors. Use the For statement to repeat as many times as you like. Discard the first several steps to ensure equilibrium.
 
 ```@example
 using MetropolisAlgorithm
