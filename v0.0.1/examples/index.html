@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Examples · MetropolisAlgorithm.jl</title><meta name="title" content="Examples · MetropolisAlgorithm.jl"/><meta property="og:title" content="Examples · MetropolisAlgorithm.jl"/><meta property="twitter:title" content="Examples · MetropolisAlgorithm.jl"/><meta name="description" content="Documentation for MetropolisAlgorithm.jl."/><meta property="og:description" content="Documentation for MetropolisAlgorithm.jl."/><meta property="twitter:description" content="Documentation for MetropolisAlgorithm.jl."/><meta property="og:url" content="https://JuliaFewBody.github.io/MetropolisAlgorithm.jl/examples/"/><meta property="twitter:url" content="https://JuliaFewBody.github.io/MetropolisAlgorithm.jl/examples/"/><link rel="canonical" href="https://JuliaFewBody.github.io/MetropolisAlgorithm.jl/examples/"/><script data-outdated-warner src="../assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.050/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.8/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL=".."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../assets/documenter.js"></script><script src="../search_index.js"></script><script src="../siteinfo.js"></script><script src="../../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/catppuccin-mocha.css" data-theme-name="catppuccin-mocha"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/catppuccin-macchiato.css" data-theme-name="catppuccin-macchiato"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/catppuccin-frappe.css" data-theme-name="catppuccin-frappe"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/catppuccin-latte.css" data-theme-name="catppuccin-latte"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="../assets/themeswap.js"></script><link href="../assets/logo.ico" rel="icon" type="image/x-icon"/></head><body><div id="documenter"><nav class="docs-sidebar"><a class="docs-logo" href="../"><img src="../assets/logo.svg" alt="MetropolisAlgorithm.jl logo"/></a><div class="docs-package-name"><span class="docs-autofit"><a href="../">MetropolisAlgorithm.jl</a></span></div><button class="docs-search-query input is-rounded is-small is-clickable my-2 mx-auto py-1 px-2" id="documenter-search-query">Search docs (Ctrl + /)</button><ul class="docs-menu"><li><a class="tocitem" href="../">Home</a></li><li class="is-active"><a class="tocitem" href>Examples</a><ul class="internal"><li><a class="tocitem" href="#One-dimensional-Metropolis-walk"><span>One-dimensional Metropolis-walk</span></a></li><li><a class="tocitem" href="#Three-dimensional-Metropolis-walk"><span>Three-dimensional Metropolis-walk</span></a></li></ul></li><li><a class="tocitem" href="../API/">API reference</a></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><a class="docs-sidebar-button docs-navbar-link fa-solid fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a><nav class="breadcrumb"><ul class="is-hidden-mobile"><li class="is-active"><a href>Examples</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>Examples</a></li></ul></nav><div class="docs-right"><a class="docs-navbar-link" href="https://github.com/JuliaFewBody/MetropolisAlgorithm.jl" title="View the repository on GitHub"><span class="docs-icon fa-brands"></span><span class="docs-label is-hidden-touch">GitHub</span></a><a class="docs-navbar-link" href="https://github.com/JuliaFewBody/MetropolisAlgorithm.jl/blob/main/docs/src/examples.md" title="Edit source on GitHub"><span class="docs-icon fa-solid"></span></a><a class="docs-settings-button docs-navbar-link fa-solid fa-gear" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-article-toggle-button fa-solid fa-chevron-up" id="documenter-article-toggle-button" href="javascript:;" title="Collapse all docstrings"></a></div></header><article class="content" id="documenter-page"><h1 id="Examples"><a class="docs-heading-anchor" href="#Examples">Examples</a><a id="Examples-1"></a><a class="docs-heading-anchor-permalink" href="#Examples" title="Permalink"></a></h1><h2 id="One-dimensional-Metropolis-walk"><a class="docs-heading-anchor" href="#One-dimensional-Metropolis-walk">One-dimensional Metropolis-walk</a><a id="One-dimensional-Metropolis-walk-1"></a><a class="docs-heading-anchor-permalink" href="#One-dimensional-Metropolis-walk" title="Permalink"></a></h2><div class="admonition is-info" id="Note-6ea6a83e3869520e"><header class="admonition-header">Note<a class="admonition-anchor" href="#Note-6ea6a83e3869520e" title="Permalink"></a></header><div class="admonition-body"><p>Even in the one-dimensional case, the initial value ​​must be defined as a vector.</p></div></div><h3 id="Minimal-Working-Example-for-Single-Walker"><a class="docs-heading-anchor" href="#Minimal-Working-Example-for-Single-Walker">Minimal Working Example for Single-Walker</a><a id="Minimal-Working-Example-for-Single-Walker-1"></a><a class="docs-heading-anchor-permalink" href="#Minimal-Working-Example-for-Single-Walker" title="Permalink"></a></h3><p>This is a minimal working example for 1-walker x 1000-steps, 1-dimensional Metropolis-walk on the Gaussian distribution function:</p><p class="math-container">\[p(x) = \frac{1}{\sqrt{2\pi}} \exp\left(-\frac{1}{2}x^2\right).\]</p><pre><code class="language-julia hljs"># sampling Gaussian distribution
+using MetropolisAlgorithm
+p(x) = exp(-x[1]^2/2) / sqrt(2*π)
+r₀ = [1.0]
+R = metropolis(p, r₀, n_steps=1000)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">1000-element Vector{Vector{Float64}}:
+ [1.0]
+ [1.345286839829905]
+ [1.5973517280440164]
+ [1.5973517280440164]
+ [1.7217537757384416]
+ [1.3552008338346235]
+ [1.2296768333719443]
+ [1.5031779371736174]
+ [1.5031779371736174]
+ [1.2283229383986507]
+ ⋮
+ [1.0327768683058869]
+ [1.0601341918195426]
+ [1.2432469549008571]
+ [0.8970601186890979]
+ [0.6152672219162981]
+ [1.0152197715157667]
+ [0.6165087236508786]
+ [0.5371294397706108]
+ [0.8403069460351947]</code></pre><p>Convert from <code>Vector{Vector{Float64}}</code> to <code>Vector{Float64}</code> for plotting <code>R</code>. A histogram of the output trajectory data <code>R</code> should be consistent with the input distribution function <code>p</code>. Consistency is confirmed in another example.</p><pre><code class="language-julia hljs"># plotting histogram
+using CairoMakie
+X = [r[1] for r in R]
+hist(X)</code></pre><img src="f03e35a4.png" alt="Example block output"/><p>This is the trajectory of a walker at each step. The histogram above shows the number of these points in each bin.</p><pre><code class="language-julia hljs"># plotting trajectory
+using CairoMakie
+X = [r[1] for r in R]
+Y = keys(X)
+lines(X, Y)</code></pre><img src="e79eb126.png" alt="Example block output"/><h3 id="Using-Distributions.jl"><a class="docs-heading-anchor" href="#Using-Distributions.jl">Using Distributions.jl</a><a id="Using-Distributions.jl-1"></a><a class="docs-heading-anchor-permalink" href="#Using-Distributions.jl" title="Permalink"></a></h3><p>Here is an example of sampling the distribution functions in <a href="https://juliastats.org/Distributions.jl/stable/univariate/#Continuous-Distributions">Distributions.jl</a>.</p><pre><code class="language-julia hljs"># distribution
+using Distributions
+d = Normal(0, 1)
+
+# sampling
+using MetropolisAlgorithm
+R = metropolis(x -&gt; Distributions.pdf(d,x[1]), [1.0], n_steps=10000, d=1.0)
+
+# reshape for plotting
+X = [r[1] for r in R]
+Y = keys(X)  .- 1
+
+# figure
+using CairoMakie
+fig = Figure(
+  size = (420,600),
+  fontsize = 11,
+  backgroundcolor = :transparent,
+)
+
+# histogram
+axis = Axis(
+  fig[1,1],
+  limits = (-5, 5, 0, 1.1*Distributions.pdf(d,d.μ)),
+  titlesize = 16.5,
+  xlabelsize = 16.5,
+  ylabelsize = 16.5,
+  title = &quot;Histogram&quot;,
+  xlabel = &quot;x&quot;,
+  ylabel = &quot;PDF(x)&quot;,
+  backgroundcolor = :transparent,
+)
+hist!(axis, [first(r) for r in R], label = &quot;Metropolis&quot;, bins = 50, normalization = :pdf)
+lines!(axis, -50..50, x -&gt; Distributions.pdf(d,x), label = &quot;Exact&quot;, color=:black)
+axislegend(axis, position = :rt, framevisible = false)
+
+# trajectory
+axis = Axis(
+  fig[2,1],
+  limits = (-5, 5, 0, length(R)),
+  titlesize = 16.5,
+  xlabelsize = 16.5,
+  ylabelsize = 16.5,
+  title = &quot;Trajectory&quot;,
+  xlabel = &quot;x&quot;,
+  ylabel = &quot;steps&quot;,
+  backgroundcolor = :transparent,
+)
+lines!(axis, X, Y, linewidth = 0.3, label = &quot;Metropolis&quot;)
+axislegend(axis, position = :rt, framevisible = false)
+
+# display
+fig</code></pre><img src="09e56b53.png" alt="Example block output"/><p>The output histograms are consistent with the input distribution functions.</p><pre><code class="language-julia hljs"># packages
+using CairoMakie
+using Distributions
+using MetropolisAlgorithm
+
+# initialize
+fig = Figure(
+  size = (1260,600),
+  fontsize = 11,
+  backgroundcolor = :transparent,
+)
+
+for n in 1:6
+
+    # distribution
+    d = [
+        Normal(0, 1)
+        SymTriangularDist(0, 1)
+        Uniform(0, 1)
+        Gamma(7.5, 1)
+        TriangularDist(0, 1, 0.2)
+        Semicircle(1)
+    ][n]
+    μ = Distributions.mean(d)
+    σ = Distributions.std(d)
+
+    # sampling
+    R = metropolis(x -&gt; Distributions.pdf(d,x[1]), [1.0], n_steps=100000, d=σ)
+
+    # plot
+    axis = Axis(
+      fig[div(n-1,3)+1,rem(n-1,3)+1],
+      limits = (-5*σ+μ, 5*σ+μ, 0, 1.2*maximum(Distributions.pdf(d,x) for x in -5*σ+μ:0.1:5*σ+μ)),
+      titlesize = 16.5,
+      xlabelsize = 16.5,
+      ylabelsize = 16.5,
+      title = &quot;$d&quot;,
+      xlabel = &quot;x&quot;,
+      ylabel = &quot;PDF(x)&quot;,
+      backgroundcolor = :transparent,
+    )
+    hist!(axis, [first(r) for r in R], label = &quot;Metropolis&quot;, bins = 50, normalization = :pdf)
+    lines!(axis, -50..50, x -&gt; Distributions.pdf(d,x), label = &quot;PDF&quot;, color=:black)
+    axislegend(axis, position = :rt, framevisible = false)
+
+end
+
+fig</code></pre><img src="77beb536.png" alt="Example block output"/><h3 id="Minimal-Working-Example-for-Multiple-Walkers"><a class="docs-heading-anchor" href="#Minimal-Working-Example-for-Multiple-Walkers">Minimal Working Example for Multiple-Walkers</a><a id="Minimal-Working-Example-for-Multiple-Walkers-1"></a><a class="docs-heading-anchor-permalink" href="#Minimal-Working-Example-for-Multiple-Walkers" title="Permalink"></a></h3><p>Allocate memory by yourself for multiple walkers.</p><pre><code class="language-julia hljs">using MetropolisAlgorithm
+p(x) = exp(-x[1]^2/2) / sqrt(2*π)
+R = fill([0.0], 10000)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">10000-element Vector{Vector{Float64}}:
+ [0.0]
+ [0.0]
+ [0.0]
+ [0.0]
+ [0.0]
+ [0.0]
+ [0.0]
+ [0.0]
+ [0.0]
+ [0.0]
+ ⋮
+ [0.0]
+ [0.0]
+ [0.0]
+ [0.0]
+ [0.0]
+ [0.0]
+ [0.0]
+ [0.0]
+ [0.0]</code></pre><p>Each step is run without memory allocation for walkers, overwriting the second argument.</p><pre><code class="language-julia hljs">metropolis!(p, R)
+R</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">10000-element Vector{Vector{Float64}}:
+ [0.4636944236329489]
+ [0.41322398208421174]
+ [0.10814446572044956]
+ [0.421704728046172]
+ [-0.012346235879550305]
+ [-0.3361322637537677]
+ [-0.20772433744733587]
+ [0.015541414256029396]
+ [-0.22804772354139358]
+ [0.23162982517249053]
+ ⋮
+ [-0.001926000288464902]
+ [-0.20169828821390234]
+ [0.3703927237197855]
+ [0.3416334385768399]
+ [0.38152590241118445]
+ [0.06494657977401075]
+ [0.0838206494189927]
+ [-0.3948670832002573]
+ [0.13180613759407]</code></pre><p>Use the For statement to repeat as many times as you like.</p><pre><code class="language-julia hljs">for i in 1:100
+  metropolis!(p, R)
+end
+R</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">10000-element Vector{Vector{Float64}}:
+ [-0.6852511537656505]
+ [-1.0753418115664584]
+ [-1.5667480827702644]
+ [-0.049398570485480464]
+ [-3.1529552024192347]
+ [-1.8260384493665347]
+ [0.8480229226523952]
+ [-0.6755543232575186]
+ [0.824607998141009]
+ [-1.2623667414635253]
+ ⋮
+ [-0.8555137528145933]
+ [-1.6730399538813625]
+ [2.4404010476503504]
+ [-0.4910469963297216]
+ [-1.9081146786413221]
+ [-0.17632956562059676]
+ [0.8269867914037929]
+ [-0.33064694180217713]
+ [0.39205195237546564]</code></pre><p>Time evolution to reach equilibrium. The first several steps are not consistent with the correct distribution.</p><pre><code class="language-julia hljs">using MetropolisAlgorithm
+
+# distribution function
+p(x) = exp(-x[1]^2/2) / sqrt(2*π)
+
+# figure
+using CairoMakie
+fig = Figure(size=(1680, 420))
+
+# axis
+axis1 = Axis(fig[1,1], limits=(-5, 5, 0, 1.1*p([0])), title=&quot;n=0&quot;)
+axis2 = Axis(fig[1,2], limits=(-5, 5, 0, 1.1*p([0])), title=&quot;n=1&quot;)
+axis3 = Axis(fig[1,3], limits=(-5, 5, 0, 1.1*p([0])), title=&quot;n=2&quot;)
+axis4 = Axis(fig[1,4], limits=(-5, 5, 0, 1.1*p([0])), title=&quot;n=100&quot;)
+
+# n = 0
+R = fill(zeros(1), 10000)
+hist!(axis1, [r[1] for r in R], bins=-5:0.1:5, normalization=:pdf)
+lines!(axis1, -5..5, p, color=:black)
+
+# n = 1
+metropolis!(p, R)
+hist!(axis2, [r[1] for r in R], bins=-5:0.1:5, normalization=:pdf)
+lines!(axis2, -5..5, p, color=:black)
+
+# n = 2
+metropolis!(p, R)
+hist!(axis3, [r[1] for r in R], bins=-5:0.1:5, normalization=:pdf)
+lines!(axis3, -5..5, p, color=:black)
+
+# n = 100
+for i in 3:100
+    metropolis!(p, R)
+end
+hist!(axis4, [r[1] for r in R], bins=-5:0.1:5, normalization=:pdf)
+lines!(axis4, -5..5, p, color=:black)
+
+# display
+fig</code></pre><img src="9dfc4a16.png" alt="Example block output"/><h2 id="Three-dimensional-Metropolis-walk"><a class="docs-heading-anchor" href="#Three-dimensional-Metropolis-walk">Three-dimensional Metropolis-walk</a><a id="Three-dimensional-Metropolis-walk-1"></a><a class="docs-heading-anchor-permalink" href="#Three-dimensional-Metropolis-walk" title="Permalink"></a></h2><p>Here is an example of sampling a function like an atomic orbital (d-orbital).</p><h3 id="Single-Walker"><a class="docs-heading-anchor" href="#Single-Walker">Single-Walker</a><a id="Single-Walker-1"></a><a class="docs-heading-anchor-permalink" href="#Single-Walker" title="Permalink"></a></h3><pre><code class="language-julia hljs"># sampling
+using MetropolisAlgorithm
+ψ(r) = r[1] * r[2] * exp(- r[1]^2 - r[2]^2 - r[3]^2)
+p(r) = abs2(ψ(r))
+R = metropolis(r -&gt; abs2(ψ(r)), [1.0, 0.0, 0.0], n_steps=50000)
+
+# plot
+using CairoMakie
+CairoMakie.activate!(type = &quot;png&quot;)
+fig = Figure(size=(420,420), figure_padding=0)
+axis = Axis(fig[1,1], aspect=1, backgroundcolor=:black, limits=(-2,2,-2,2))
+hidespines!(axis)
+hidedecorations!(axis)
+lines!(axis, [r[1] for r in R], [r[2] for r in R], linewidth=0.1, color=&quot;#00FFFF&quot;)
+fig</code></pre><img src="234c37e6.png" alt="Example block output"/><h3 id="Multiple-Walkers"><a class="docs-heading-anchor" href="#Multiple-Walkers">Multiple-Walkers</a><a id="Multiple-Walkers-1"></a><a class="docs-heading-anchor-permalink" href="#Multiple-Walkers" title="Permalink"></a></h3><pre><code class="language-julia hljs">using MetropolisAlgorithm
+
+# distribution function
+ψ(r) = r[1] * r[2] * exp(- r[1]^2 - r[2]^2 - r[3]^2)
+p(r) = abs2(ψ(r))
+
+# figure
+using CairoMakie
+CairoMakie.activate!(type = &quot;png&quot;)
+fig = Figure(size=(1680, 420))
+
+# axis
+axis1 = Axis(fig[1,1], aspect=1, limits=(-2,2,-2,2), backgroundcolor=:black, title=&quot;n=0&quot;)
+axis2 = Axis(fig[1,2], aspect=1, limits=(-2,2,-2,2), backgroundcolor=:black, title=&quot;n=1&quot;)
+axis3 = Axis(fig[1,3], aspect=1, limits=(-2,2,-2,2), backgroundcolor=:black, title=&quot;n=2&quot;)
+axis4 = Axis(fig[1,4], aspect=1, limits=(-2,2,-2,2), backgroundcolor=:black, title=&quot;n=10&quot;)
+hidespines!(axis1)
+hidespines!(axis2)
+hidespines!(axis3)
+hidespines!(axis4)
+hidedecorations!(axis1)
+hidedecorations!(axis2)
+hidedecorations!(axis3)
+hidedecorations!(axis4)
+
+# n = 0
+R = fill(zeros(3), 10000)
+scatter!(axis1, [r[1] for r in R], [r[2] for r in R], markersize=2, color=&quot;#00FFFF&quot;)
+
+# n = 1
+metropolis!(p, R)
+scatter!(axis2, [r[1] for r in R], [r[2] for r in R], markersize=2, color=&quot;#00FFFF&quot;)
+
+# n = 2
+metropolis!(p, R)
+scatter!(axis3, [r[1] for r in R], [r[2] for r in R], markersize=2, color=&quot;#00FFFF&quot;)
+
+# n = 10
+for i in 1:10
+    metropolis!(p, R)
+end
+scatter!(axis4, [r[1] for r in R], [r[2] for r in R], markersize=2, color=&quot;#00FFFF&quot;)
+
+# display
+fig</code></pre><img src="732ebac2.png" alt="Example block output"/></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../">« Home</a><a class="docs-footer-nextpage" href="../API/">API reference »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.14.1 on <span class="colophon-date" title="Saturday 27 September 2025 11:48">Saturday 27 September 2025</span>. Using Julia version 1.11.7.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
