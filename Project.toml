@@ -1,7 +1,7 @@
 name = "MetropolisAlgorithm"
 uuid = "e0c51df9-7b68-45ac-a268-26cdc14101c5"
 authors = ["Shuhei Ohno"]
-version = "0.0.1"
+version = "0.0.2"
 
 [deps]
 Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
