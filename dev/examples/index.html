@@ -5,32 +5,32 @@ p(x) = exp(-x[1]^2/2) / sqrt(2*π)
 r₀ = [1.0]
 R = metropolis(p, r₀, n_steps=1000)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">1000-element Vector{Vector{Float64}}:
  [1.0]
- [1.0]
- [1.4893419842029658]
- [1.2837217635667326]
- [1.6778406565825645]
- [1.7167864226849652]
- [1.7167864226849652]
- [1.9880795168862035]
- [1.9913229364965352]
- [2.224063811402767]
+ [0.8842363218625092]
+ [0.8842363218625092]
+ [1.2899757426598568]
+ [0.7966625079208582]
+ [0.43102853731775814]
+ [0.27527969151017173]
+ [0.02918159008139254]
+ [0.026357707588070767]
+ [0.4238227469305381]
  ⋮
- [1.3912294949153945]
- [1.44368122864072]
- [1.5607559999981206]
- [1.289725470161961]
- [1.5096253241634272]
- [1.1748330441223116]
- [1.632290472041971]
- [1.201121083869564]
- [0.950953162982133]</code></pre><p>Convert from <code>Vector{Vector{Float64}}</code> to <code>Vector{Float64}</code> for plotting <code>R</code>. A histogram of the output trajectory data <code>R</code> should be consistent with the input distribution function <code>p</code>. Consistency is confirmed in another example.</p><pre><code class="language-julia hljs"># plotting histogram
+ [0.9734849887057255]
+ [0.5065185975770482]
+ [0.7268605920144693]
+ [0.2571075338969203]
+ [0.49494818661361184]
+ [0.5710090087532835]
+ [0.29668541678096394]
+ [0.6425542343225669]
+ [0.9315020698917552]</code></pre><p>Convert from <code>Vector{Vector{Float64}}</code> to <code>Vector{Float64}</code> for plotting <code>R</code>. A histogram of the output trajectory data <code>R</code> should be consistent with the input distribution function <code>p</code>. Consistency is confirmed in another example.</p><pre><code class="language-julia hljs"># plotting histogram
 using CairoMakie
 X = [r[1] for r in R]
-hist(X)</code></pre><img src="3766bb16.png" alt="Example block output"/><p>This is the trajectory of a walker at each step. The histogram above shows the number of these points in each bin.</p><pre><code class="language-julia hljs"># plotting trajectory
+hist(X)</code></pre><img src="f34bc12a.png" alt="Example block output"/><p>This is the trajectory of a walker at each step. The histogram above shows the number of these points in each bin.</p><pre><code class="language-julia hljs"># plotting trajectory
 using CairoMakie
 X = [r[1] for r in R]
 Y = keys(X)
-lines(X, Y)</code></pre><img src="07852e5b.png" alt="Example block output"/><h3 id="Using-Distributions.jl"><a class="docs-heading-anchor" href="#Using-Distributions.jl">Using Distributions.jl</a><a id="Using-Distributions.jl-1"></a><a class="docs-heading-anchor-permalink" href="#Using-Distributions.jl" title="Permalink"></a></h3><p>Here is an example of sampling the distribution functions in <a href="https://juliastats.org/Distributions.jl/stable/univariate/#Continuous-Distributions">Distributions.jl</a>.</p><pre><code class="language-julia hljs"># distribution
+lines(X, Y)</code></pre><img src="69d9fd7e.png" alt="Example block output"/><h3 id="Using-Distributions.jl"><a class="docs-heading-anchor" href="#Using-Distributions.jl">Using Distributions.jl</a><a id="Using-Distributions.jl-1"></a><a class="docs-heading-anchor-permalink" href="#Using-Distributions.jl" title="Permalink"></a></h3><p>Here is an example of sampling the distribution functions in <a href="https://juliastats.org/Distributions.jl/stable/univariate/#Continuous-Distributions">Distributions.jl</a>.</p><pre><code class="language-julia hljs"># distribution
 using Distributions
 d = Normal(0, 1)
 
@@ -82,7 +82,7 @@ lines!(axis, X, Y, linewidth = 0.3, label = &quot;Metropolis&quot;)
 axislegend(axis, position = :rt, framevisible = false)
 
 # display
-fig</code></pre><img src="b8ed5d76.png" alt="Example block output"/><p>The output histograms are consistent with the input distribution functions.</p><pre><code class="language-julia hljs"># packages
+fig</code></pre><img src="c582a2c7.png" alt="Example block output"/><p>The output histograms are consistent with the input distribution functions.</p><pre><code class="language-julia hljs"># packages
 using CairoMakie
 using Distributions
 using MetropolisAlgorithm
@@ -129,7 +129,7 @@ for n in 1:6
 
 end
 
-fig</code></pre><img src="91f28aa1.png" alt="Example block output"/><h3 id="Minimal-Working-Example-for-Multiple-Walkers"><a class="docs-heading-anchor" href="#Minimal-Working-Example-for-Multiple-Walkers">Minimal Working Example for Multiple-Walkers</a><a id="Minimal-Working-Example-for-Multiple-Walkers-1"></a><a class="docs-heading-anchor-permalink" href="#Minimal-Working-Example-for-Multiple-Walkers" title="Permalink"></a></h3><p>Allocate memory by yourself for multiple walkers.</p><pre><code class="language-julia hljs">using MetropolisAlgorithm
+fig</code></pre><img src="ac7e671f.png" alt="Example block output"/><h3 id="Minimal-Working-Example-for-Multiple-Walkers"><a class="docs-heading-anchor" href="#Minimal-Working-Example-for-Multiple-Walkers">Minimal Working Example for Multiple-Walkers</a><a id="Minimal-Working-Example-for-Multiple-Walkers-1"></a><a class="docs-heading-anchor-permalink" href="#Minimal-Working-Example-for-Multiple-Walkers" title="Permalink"></a></h3><p>Allocate memory by yourself for multiple walkers.</p><pre><code class="language-julia hljs">using MetropolisAlgorithm
 p(x) = exp(-x[1]^2/2) / sqrt(2*π)
 R = fill([0.0], 10000)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">10000-element Vector{Vector{Float64}}:
  [0.0]
@@ -153,49 +153,49 @@ R = fill([0.0], 10000)</code></pre><pre class="documenter-example-output"><code 
  [0.0]
  [0.0]</code></pre><p>Each step is run without memory allocation for walkers, overwriting the second argument.</p><pre><code class="language-julia hljs">metropolis!(p, R)
 R</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">10000-element Vector{Vector{Float64}}:
- [0.3973961076148318]
- [0.27154489013721983]
- [0.28192926037154753]
- [0.17662320365182138]
- [0.25915560505244284]
- [-0.27847853099154163]
- [0.18819292120158893]
- [0.08304649754501614]
- [-0.2992547931784113]
- [0.3578428020551129]
+ [-0.36238507850531854]
+ [-0.19199978354655345]
+ [0.10116038096960867]
+ [-0.15115420558082515]
+ [0.23937914995383636]
+ [0.2879693228773873]
+ [-0.1918246338256846]
+ [-0.3009792259374626]
+ [0.31342363679799246]
+ [-0.3442340774121988]
  ⋮
- [-0.3786391701246653]
- [-0.0015616292221231065]
- [0.08353785216331588]
- [0.17499719478277498]
- [0.4188831194998558]
- [0.324443980543746]
- [0.21880813927603526]
- [0.0]
- [0.07276802288745188]</code></pre><p>Use the For statement to repeat as many times as you like.</p><pre><code class="language-julia hljs">for i in 1:100
+ [-0.33717019187073083]
+ [-0.10952052900774756]
+ [-0.0041925146814719705]
+ [0.4620076789161992]
+ [0.33793105410034685]
+ [-0.17672256730925673]
+ [-0.3587887732593451]
+ [-0.07121928021019586]
+ [-0.46588901882225797]</code></pre><p>Use the For statement to repeat as many times as you like.</p><pre><code class="language-julia hljs">for i in 1:100
   metropolis!(p, R)
 end
 R</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">10000-element Vector{Vector{Float64}}:
- [-0.5423546031853553]
- [1.600389565430302]
- [-0.35391936696819626]
- [0.7956962495499426]
- [-1.7211990091268086]
- [-0.30460683884489326]
- [0.6637448976829148]
- [-0.6468213920099958]
- [-0.3289694604318142]
- [0.8873298715987067]
+ [-1.3735745632945977]
+ [0.6428761697124191]
+ [0.7376733732194536]
+ [1.9735580246326685]
+ [0.04731105571375638]
+ [-0.32101146874912334]
+ [0.8565757350576514]
+ [-0.35705131512910027]
+ [-0.09988536111317448]
+ [-1.3407174022706663]
  ⋮
- [-0.43712698023367824]
- [-0.11461056115218404]
- [0.8433340328424592]
- [-0.7866721564208604]
- [-0.3021923480584606]
- [0.06437181349893617]
- [0.13020526947767708]
- [-0.5419363846301087]
- [-0.13587054025522582]</code></pre><p>Time evolution to reach equilibrium. The first several steps are not consistent with the correct distribution.</p><pre><code class="language-julia hljs">using MetropolisAlgorithm
+ [0.6861093924133987]
+ [-0.453412478117208]
+ [-0.34129270253490485]
+ [-0.5565904506341147]
+ [1.4263036204822108]
+ [-0.13548063028507307]
+ [1.3922958848536373]
+ [1.8733985767517498]
+ [0.15099900425304258]</code></pre><p>Time evolution to reach equilibrium. The first several steps are not consistent with the correct distribution.</p><pre><code class="language-julia hljs">using MetropolisAlgorithm
 
 # distribution function
 p(x) = exp(-x[1]^2/2) / sqrt(2*π)
@@ -233,7 +233,7 @@ hist!(axis4, [r[1] for r in R], bins=-5:0.1:5, normalization=:pdf)
 lines!(axis4, -5..5, p, color=:black)
 
 # display
-fig</code></pre><img src="0a068786.png" alt="Example block output"/><h2 id="Three-dimensional-Metropolis-walk"><a class="docs-heading-anchor" href="#Three-dimensional-Metropolis-walk">Three-dimensional Metropolis-walk</a><a id="Three-dimensional-Metropolis-walk-1"></a><a class="docs-heading-anchor-permalink" href="#Three-dimensional-Metropolis-walk" title="Permalink"></a></h2><p>Here is an example of sampling a function like an atomic orbital (d-orbital).</p><h3 id="Single-Walker"><a class="docs-heading-anchor" href="#Single-Walker">Single-Walker</a><a id="Single-Walker-1"></a><a class="docs-heading-anchor-permalink" href="#Single-Walker" title="Permalink"></a></h3><pre><code class="language-julia hljs"># sampling
+fig</code></pre><img src="d988fdf2.png" alt="Example block output"/><h2 id="Three-dimensional-Metropolis-walk"><a class="docs-heading-anchor" href="#Three-dimensional-Metropolis-walk">Three-dimensional Metropolis-walk</a><a id="Three-dimensional-Metropolis-walk-1"></a><a class="docs-heading-anchor-permalink" href="#Three-dimensional-Metropolis-walk" title="Permalink"></a></h2><p>Here is an example of sampling a function like an atomic orbital (d-orbital).</p><h3 id="Single-Walker"><a class="docs-heading-anchor" href="#Single-Walker">Single-Walker</a><a id="Single-Walker-1"></a><a class="docs-heading-anchor-permalink" href="#Single-Walker" title="Permalink"></a></h3><pre><code class="language-julia hljs"># sampling
 using MetropolisAlgorithm
 ψ(r) = r[1] * r[2] * exp(- r[1]^2 - r[2]^2 - r[3]^2)
 p(r) = abs2(ψ(r))
@@ -247,7 +247,7 @@ axis = Axis(fig[1,1], aspect=1, backgroundcolor=:black, limits=(-2,2,-2,2))
 hidespines!(axis)
 hidedecorations!(axis)
 lines!(axis, [r[1] for r in R], [r[2] for r in R], linewidth=0.1, color=&quot;#00FFFF&quot;)
-fig</code></pre><img src="45c79509.png" alt="Example block output"/><h3 id="Multiple-Walkers"><a class="docs-heading-anchor" href="#Multiple-Walkers">Multiple-Walkers</a><a id="Multiple-Walkers-1"></a><a class="docs-heading-anchor-permalink" href="#Multiple-Walkers" title="Permalink"></a></h3><pre><code class="language-julia hljs">using MetropolisAlgorithm
+fig</code></pre><img src="5d85041c.png" alt="Example block output"/><h3 id="Multiple-Walkers"><a class="docs-heading-anchor" href="#Multiple-Walkers">Multiple-Walkers</a><a id="Multiple-Walkers-1"></a><a class="docs-heading-anchor-permalink" href="#Multiple-Walkers" title="Permalink"></a></h3><pre><code class="language-julia hljs">using MetropolisAlgorithm
 
 # distribution function
 ψ(r) = r[1] * r[2] * exp(- r[1]^2 - r[2]^2 - r[3]^2)
@@ -291,4 +291,4 @@ end
 scatter!(axis4, [r[1] for r in R], [r[2] for r in R], markersize=2, color=&quot;#00FFFF&quot;)
 
 # display
-fig</code></pre><img src="2723bae5.png" alt="Example block output"/></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../">« Home</a><a class="docs-footer-nextpage" href="../API/">API reference »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.17.0 on <span class="colophon-date" title="Monday 13 April 2026 11:31">Monday 13 April 2026</span>. Using Julia version 1.12.6.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+fig</code></pre><img src="07536bad.png" alt="Example block output"/></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../">« Home</a><a class="docs-footer-nextpage" href="../API/">API reference »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.17.0 on <span class="colophon-date" title="Thursday 30 April 2026 10:43">Thursday 30 April 2026</span>. Using Julia version 1.12.6.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
